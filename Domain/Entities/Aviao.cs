@@ -5,18 +5,22 @@ namespace Domain.Entities
     public class Aviao : BaseEntity
     {
         public string Matricula { get; private set; }
+        public int AviaoId { get; set; }
+        public virtual Modelo Modelo { get; set; }
 
-        private Aviao()
+        private Aviao() => Metadata.Create();
+
+        public static Aviao Create(string matricula)
         {
-            Metadata = Metadata.Create();
+            return new Aviao
+            {
+                Matricula = matricula
+            };
         }
-
-        public static Aviao Create(string matricula) => new Aviao { Matricula = matricula };
 
         public Aviao UpdateMatricula(string matricula)
         {
             Metadata.Update();
-
             Matricula = matricula;
             return this;
         }
