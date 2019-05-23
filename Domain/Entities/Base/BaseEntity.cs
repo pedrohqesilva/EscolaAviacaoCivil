@@ -4,31 +4,31 @@ namespace Domain.Entities.Base
 {
     public abstract class BaseEntity
     {
-        public int Id { get; set; }
-        public Guid Guid { get; set; }
-        public Metadata Metadata { get; set; }
+        public int Id { get; protected set; }
+        public Guid Guid { get; protected set; }
+        public Metadata Metadata { get; protected set; }
     }
 
     public class Metadata
     {
-        public DateTime DataCriacao { get; private set; }
-        public DateTime? DataAtualizacao { get; private set; }
-        public DateTime? DataRemocao { get; private set; }
+        public DateTime DataCriacao { get; private set; } = DateTime.Now;
+        public DateTime? DataModificacao { get; private set; }
+        public DateTime? DataExclusao { get; private set; }
 
-        public bool IsRemovido { get; private set; }
+        public bool IsExcluido { get; private set; }
 
-        public static Metadata Create() => new Metadata { DataCriacao = DateTime.Now };
+        public static Metadata Create() => new Metadata();
 
         public Metadata Update()
         {
-            DataAtualizacao = DateTime.Now;
+            DataModificacao = DateTime.Now;
             return this;
         }
 
         public Metadata Remove()
         {
-            DataRemocao = DateTime.Now;
-            IsRemovido = true;
+            DataExclusao = DateTime.Now;
+            IsExcluido = true;
             return this;
         }
     }
