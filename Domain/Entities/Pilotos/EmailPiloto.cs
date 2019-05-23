@@ -4,9 +4,9 @@ namespace Domain.Entities.Pilotos
 {
     public class EmailPiloto : BaseEntity
     {
-        public string Endereco { get; set; }
-        public int PilotoId { get; set; }
-        public Piloto Piloto { get; set; }
+        public string Endereco { get; private set; }
+        public int PilotoId { get; private set; }
+        public Piloto Piloto { get; private set; }
 
         private EmailPiloto() => Metadata.Create();
 

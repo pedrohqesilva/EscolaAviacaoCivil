@@ -2,10 +2,10 @@
 {
     public class Estado : BaseEntity
     {
-        public string Sigla { get; set; }
-        public string Descricao { get; set; }
-        public int PaisId { get; set; }
-        public Pais Pais { get; set; }
+        public string Sigla { get; private set; }
+        public string Descricao { get; private set; }
+        public int PaisId { get; private set; }
+        public Pais Pais { get; private set; }
 
         private Estado() => Metadata.Create();
 

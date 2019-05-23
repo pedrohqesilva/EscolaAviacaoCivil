@@ -5,10 +5,10 @@ namespace Domain.Entities.Avioes
 {
     public class Fabricante : BaseEntity
     {
-        public string RazaoSocial { get; set; }
-        public string NomeFantasia { get; set; }
-        public string Descricao { get; set; }
-        public virtual IList<Modelo> Modelos { get; set; }
+        public string RazaoSocial { get; private set; }
+        public string NomeFantasia { get; private set; }
+        public string Descricao { get; private set; }
+        public virtual IList<Modelo> Modelos { get; private set; }
 
         private Fabricante() => Metadata.Create();
 

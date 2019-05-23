@@ -4,10 +4,10 @@ namespace Domain.Entities.Pilotos
 {
     public class TelefonePiloto : BaseEntity
     {
-        public int DDD { get; set; }
-        public int Numero { get; set; }
-        public int PilotoId { get; set; }
-        public Piloto Piloto { get; set; }
+        public int DDD { get; private set; }
+        public int Numero { get; private set; }
+        public int PilotoId { get; private set; }
+        public Piloto Piloto { get; private set; }
 
         private TelefonePiloto() => Metadata.Create();
 

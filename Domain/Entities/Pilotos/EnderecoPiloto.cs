@@ -4,21 +4,19 @@ namespace Domain.Entities.Pilotos
 {
     public class EnderecoPiloto : BaseEntity
     {
-        public string Cep { get; set; }
-        public string Logradouro { get; set; }
-        public int Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public int CidadeId { get; set; }
-        public virtual Cidade Cidade { get; set; }
-        public int EstadoId { get; set; }
-        public virtual Estado Estado { get; set; }
-        public int PilotoId { get; set; }
-        public virtual Piloto Piloto { get; set; }
+        public string Cep { get; private set; }
+        public string Logradouro { get; private set; }
+        public int Numero { get; private set; }
+        public string Complemento { get; private set; }
+        public string Bairro { get; private set; }
+        public int CidadeId { get; private set; }
+        public virtual Cidade Cidade { get; private set; }
+        public int PilotoId { get; private set; }
+        public virtual Piloto Piloto { get; private set; }
 
         private EnderecoPiloto() => Metadata.Create();
 
-        public static EnderecoPiloto Create(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int estadoId, int pilotoId)
+        public static EnderecoPiloto Create(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int pilotoId)
         {
             // Adicionar validator
 
@@ -30,12 +28,11 @@ namespace Domain.Entities.Pilotos
                 Complemento = complemento,
                 Bairro = bairro,
                 CidadeId = cidadeId,
-                EstadoId = estadoId,
                 PilotoId = pilotoId
             };
         }
 
-        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int estadoId)
+        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
         {
             // Adicionar validator
 
@@ -45,8 +42,7 @@ namespace Domain.Entities.Pilotos
                 .UpdateNumero(numero)
                 .UpdateComplemento(complemento)
                 .UpdateBairro(bairro)
-                .UpdateCidade(cidadeId)
-                .UpdateEstado(estadoId);
+                .UpdateCidade(cidadeId);
         }
 
         public EnderecoPiloto UpdateCep(string cep)
@@ -88,13 +84,6 @@ namespace Domain.Entities.Pilotos
         {
             Metadata.Update();
             CidadeId = cidadeId;
-            return this;
-        }
-
-        public EnderecoPiloto UpdateEstado(int estadoId)
-        {
-            Metadata.Update();
-            EstadoId = estadoId;
             return this;
         }
     }

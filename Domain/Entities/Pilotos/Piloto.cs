@@ -6,21 +6,21 @@ namespace Domain.Entities.Pilotos
 {
     public class Piloto : BaseEntity
     {
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public DateTime DataNascimento { get; set; }
-        public string FormacaoAcademica { get; set; }
-        public string Observacao { get; set; }
-        public string Sexo { get; set; }
-        public int CarteiraAnacId { get; set; }
-        public CarteiraAnac CarteiraAnac { get; set; }
-        public int CarteiraIdentidadeId { get; set; }
-        public CarteiraIdentidade CarteiraIdentidade { get; set; }
-        public int CarteiraHabilitacaoId { get; set; }
-        public CarteiraHabilitacao CarteiraHabilitacao { get; set; }
-        public IList<EnderecoPiloto> Enderecos { get; set; }
-        public IList<TelefonePiloto> Telefones { get; set; }
-        public IList<EmailPiloto> Emails { get; set; }
+        public string Nome { get; private set; }
+        public string Cpf { get; private set; }
+        public DateTime DataNascimento { get; private set; }
+        public string FormacaoAcademica { get; private set; }
+        public string Observacao { get; private set; }
+        public string Sexo { get; private set; }
+        public int CarteiraAnacId { get; private set; }
+        public CarteiraAnac CarteiraAnac { get; private set; }
+        public int CarteiraIdentidadeId { get; private set; }
+        public CarteiraIdentidade CarteiraIdentidade { get; private set; }
+        public int CarteiraHabilitacaoId { get; private set; }
+        public CarteiraHabilitacao CarteiraHabilitacao { get; private set; }
+        public IList<EnderecoPiloto> Enderecos { get; private set; }
+        public IList<TelefonePiloto> Telefones { get; private set; }
+        public IList<EmailPiloto> Emails { get; private set; }
 
         private Piloto() => Metadata.Create();
     }

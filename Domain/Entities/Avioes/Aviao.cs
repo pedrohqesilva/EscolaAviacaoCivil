@@ -8,8 +8,8 @@ namespace Domain.Entities.Avioes
         public string Matricula { get; private set; }
         public DateTime DataInscricao { get; private set; }
         public string Observacao { get; private set; }
-        public int ModeloId { get; set; }
-        public virtual Modelo Modelo { get; set; }
+        public int ModeloId { get; private set; }
+        public virtual Modelo Modelo { get; private set; }
 
         private Aviao() => Metadata.Create();
 

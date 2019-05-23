@@ -4,8 +4,8 @@ namespace Domain.Entities.Aeroportos
 {
     public class TipoAeroporto : BaseEntity
     {
-        public string Sigla { get; set; }
-        public string Descricao { get; set; }
+        public string Sigla { get; private set; }
+        public string Descricao { get; private set; }
 
         private TipoAeroporto() => Metadata.Create();
 

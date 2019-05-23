@@ -4,19 +4,19 @@ namespace Domain.Entities.Aeroportos
 {
     public class EnderecoAeroporto : BaseEntity
     {
-        public string Cep { get; set; }
-        public string Logradouro { get; set; }
-        public int Numero { get; set; }
-        public string Complemento { get; set; }
-        public string Bairro { get; set; }
-        public int CidadeId { get; set; }
-        public virtual Cidade Cidade { get; set; }
-        public int AeroportoId { get; set; }
-        public virtual Aeroporto Aeroporto { get; set; }
+        public string Cep { get; private set; }
+        public string Logradouro { get; private set; }
+        public int Numero { get; private set; }
+        public string Complemento { get; private set; }
+        public string Bairro { get; private set; }
+        public int CidadeId { get; private set; }
+        public virtual Cidade Cidade { get; private set; }
+        public int AeroportoId { get; private set; }
+        public virtual Aeroporto Aeroporto { get; private set; }
 
         private EnderecoAeroporto() => Metadata.Create();
 
-        public static EnderecoAeroporto Create(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int estadoId, int aeroportoId)
+        public static EnderecoAeroporto Create(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int aeroportoId)
         {
             // Adicionar validator
 
@@ -28,12 +28,11 @@ namespace Domain.Entities.Aeroportos
                 Complemento = complemento,
                 Bairro = bairro,
                 CidadeId = cidadeId,
-                EstadoId = estadoId,
                 AeroportoId = aeroportoId
             };
         }
 
-        public EnderecoAeroporto Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int estadoId)
+        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
         {
             // Adicionar validator
 
@@ -43,10 +42,7 @@ namespace Domain.Entities.Aeroportos
                 .UpdateNumero(numero)
                 .UpdateComplemento(complemento)
                 .UpdateBairro(bairro)
-                .UpdateCidade(cidadeId)
-                .UpdateEstado(estadoId);
-
-            return this;
+                .UpdateCidade(cidadeId);
         }
 
         public EnderecoAeroporto UpdateCep(string cep)
@@ -88,13 +84,6 @@ namespace Domain.Entities.Aeroportos
         {
             Metadata.Update();
             CidadeId = cidadeId;
-            return this;
-        }
-
-        public EnderecoAeroporto UpdateEstado(int estadoId)
-        {
-            Metadata.Update();
-            EstadoId = estadoId;
             return this;
         }
     }
