@@ -20,6 +20,7 @@ namespace Domain.Entities
                 FabricanteId = fabricanteId
             };
         }
+
         public Modelo UpdateDescricao(string descricao)
         {
             Metadata.Update();
