@@ -9,7 +9,7 @@ namespace Pilotos.Domain.Entities
         public int DDD { get; private set; }
         public int Numero { get; private set; }
         public int PilotoId { get; }
-        public Piloto Piloto { get; private set; }
+        public virtual Piloto Piloto { get; private set; }
 
         #endregion Properties
 

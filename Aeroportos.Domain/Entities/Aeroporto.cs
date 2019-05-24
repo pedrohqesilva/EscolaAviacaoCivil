@@ -10,9 +10,9 @@ namespace Aeroportos.Domain.Entities
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
         public int TipoAeroportoId { get; private set; }
-        public TipoAeroporto TipoAeroporto { get; private set; }
+        public virtual TipoAeroporto TipoAeroporto { get; private set; }
         public int CidadeId { get; private set; }
-        public Cidade Cidade { get; private set; }
+        public virtual Cidade Cidade { get; private set; }
 
         #endregion Properties
 

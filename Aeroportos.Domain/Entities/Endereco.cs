@@ -1,4 +1,5 @@
-﻿using Core.Domain.Entities;
+﻿using System.Collections.Generic;
+using Core.Domain.Entities;
 
 namespace Aeroportos.Domain.Entities
 {
@@ -13,7 +14,7 @@ namespace Aeroportos.Domain.Entities
         public string Bairro { get; private set; }
         public int CidadeId { get; private set; }
         public virtual Cidade Cidade { get; private set; }
-        public int AeroportoId { get; private set; }
+        public int AeroportoId { get; }
         public virtual Aeroporto Aeroporto { get; private set; }
 
         #endregion Properties

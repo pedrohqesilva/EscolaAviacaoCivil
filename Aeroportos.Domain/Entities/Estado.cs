@@ -1,4 +1,5 @@
-﻿using Core.Domain.Entities;
+﻿using System.Collections.Generic;
+using Core.Domain.Entities;
 
 namespace Aeroportos.Domain.Entities
 {
@@ -9,7 +10,8 @@ namespace Aeroportos.Domain.Entities
         public string Sigla { get; private set; }
         public string Descricao { get; private set; }
         public int PaisId { get; private set; }
-        public Pais Pais { get; private set; }
+        public virtual Pais Pais { get; private set; }
+        public virtual IList<Cidade> Cidades { get; set; }
 
         #endregion Properties
 

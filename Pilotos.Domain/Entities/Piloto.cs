@@ -15,10 +15,10 @@ namespace Pilotos.Domain.Entities
         public string Observacao { get; private set; }
         public string Sexo { get; private set; }
         public int CarteiraAnacId { get; }
-        public CarteiraAnac CarteiraAnac { get; private set; }
-        public IList<Endereco> Enderecos { get; private set; }
-        public IList<Telefone> Telefones { get; private set; }
-        public IList<Email> Emails { get; private set; }
+        public virtual CarteiraAnac CarteiraAnac { get; private set; }
+        public virtual IList<Endereco> Enderecos { get; private set; }
+        public virtual IList<Telefone> Telefones { get; private set; }
+        public virtual IList<Email> Emails { get; private set; }
 
         #endregion Properties
 
