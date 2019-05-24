@@ -7,7 +7,7 @@ namespace Pilotos.Domain.Entities
         #region Properties
 
         public string Endereco { get; private set; }
-        public int PilotoId { get; }
+        public int PilotoId { get; private set; }
         public virtual Piloto Piloto { get; private set; }
 
         #endregion Properties
@@ -26,7 +26,20 @@ namespace Pilotos.Domain.Entities
 
         public void Update(string endereco)
         {
+            this
+                .UpdateEndereco(endereco);
+        }
+
+        public Email UpdateEndereco(string endereco)
+        {
             Endereco = endereco;
+            return this;
+        }
+
+        public Email UpdatePiloto(int pilotoId)
+        {
+            PilotoId = pilotoId;
+            return this;
         }
 
         #endregion Update

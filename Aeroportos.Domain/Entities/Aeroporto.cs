@@ -31,14 +31,12 @@ namespace Aeroportos.Domain.Entities
 
         #region Update
 
-        public void Update(string codigoIcao, string nome, string descricao, int tipoAeroportoId, int cidadeId)
+        public void Update(string codigoIcao, string nome, string descricao)
         {
             this
                 .UpdateCodigoIcao(codigoIcao)
                 .UpdateNome(nome)
-                .UpdateDescricao(descricao)
-                .UpdateTipoAeroporto(tipoAeroportoId)
-                .UpdateCidade(cidadeId);
+                .UpdateDescricao(descricao);
         }
 
         public Aeroporto UpdateCodigoIcao(string codigoIcao)

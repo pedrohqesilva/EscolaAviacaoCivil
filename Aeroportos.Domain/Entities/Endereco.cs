@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
+﻿using Core.Domain.Entities;
 
 namespace Aeroportos.Domain.Entities
 {
@@ -14,7 +13,7 @@ namespace Aeroportos.Domain.Entities
         public string Bairro { get; private set; }
         public int CidadeId { get; private set; }
         public virtual Cidade Cidade { get; private set; }
-        public int AeroportoId { get; }
+        public int AeroportoId { get; private set; }
         public virtual Aeroporto Aeroporto { get; private set; }
 
         #endregion Properties
@@ -36,15 +35,14 @@ namespace Aeroportos.Domain.Entities
 
         #region Update
 
-        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
+        public void Update(string cep, string logradouro, int numero, string complemento, string bairro)
         {
             this
                 .UpdateCep(cep)
                 .UpdateLogradouro(logradouro)
                 .UpdateNumero(numero)
                 .UpdateComplemento(complemento)
-                .UpdateBairro(bairro)
-                .UpdateCidade(cidadeId);
+                .UpdateBairro(bairro);
         }
 
         public Endereco UpdateCep(string cep)
@@ -80,6 +78,12 @@ namespace Aeroportos.Domain.Entities
         public Endereco UpdateCidade(int cidadeId)
         {
             CidadeId = cidadeId;
+            return this;
+        }
+
+        public Endereco UpdateAeroporto(int aeroportoId)
+        {
+            AeroportoId = aeroportoId;
             return this;
         }
 

@@ -8,7 +8,7 @@ namespace Pilotos.Domain.Entities
 
         public int DDD { get; private set; }
         public int Numero { get; private set; }
-        public int PilotoId { get; }
+        public int PilotoId { get; private set; }
         public virtual Piloto Piloto { get; private set; }
 
         #endregion Properties
@@ -42,6 +42,12 @@ namespace Pilotos.Domain.Entities
         public Telefone UpdateNumero(int numero)
         {
             Numero = numero;
+            return this;
+        }
+
+        public Telefone UpdatePiloto(int pilotoId)
+        {
+            PilotoId = pilotoId;
             return this;
         }
 

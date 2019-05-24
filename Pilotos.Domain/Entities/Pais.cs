@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
+﻿using Core.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Pilotos.Domain.Entities
 {
@@ -9,7 +9,7 @@ namespace Pilotos.Domain.Entities
 
         public string Sigla { get; private set; }
         public string Descricao { get; private set; }
-        public virtual IList<Estado> Estados { get; set; }
+        public virtual IList<Estado> Estados { get; private set; }
 
         #endregion Properties
 

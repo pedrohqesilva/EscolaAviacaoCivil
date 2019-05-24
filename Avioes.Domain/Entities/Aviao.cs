@@ -29,13 +29,12 @@ namespace Avioes.Domain.Entities
 
         #region Update
 
-        public void Update(string matricula, DateTime dataInscricao, string observacao, int modeloId)
+        public void Update(string matricula, DateTime dataInscricao, string observacao)
         {
             this
                 .UpdateMatricula(matricula)
                 .UpdateDataInscricao(dataInscricao)
-                .UpdateObservacao(observacao)
-                .UpdateModelo(modeloId);
+                .UpdateObservacao(observacao);
         }
 
         public Aviao UpdateMatricula(string matricula)

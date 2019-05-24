@@ -14,7 +14,7 @@ namespace Pilotos.Domain.Entities
         public string FormacaoAcademica { get; private set; }
         public string Observacao { get; private set; }
         public string Sexo { get; private set; }
-        public int CarteiraAnacId { get; }
+        public int CarteiraAnacId { get; private set; }
         public virtual CarteiraAnac CarteiraAnac { get; private set; }
         public virtual IList<Endereco> Enderecos { get; private set; }
         public virtual IList<Telefone> Telefones { get; private set; }
@@ -83,6 +83,12 @@ namespace Pilotos.Domain.Entities
         public Piloto UpdateSexo(string sexo)
         {
             Sexo = sexo;
+            return this;
+        }
+
+        public Piloto UpdateCarteiraAnac(int carteiraAnacId)
+        {
+            CarteiraAnacId = carteiraAnacId;
             return this;
         }
 

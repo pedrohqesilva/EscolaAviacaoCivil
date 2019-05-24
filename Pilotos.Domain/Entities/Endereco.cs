@@ -13,7 +13,7 @@ namespace Pilotos.Domain.Entities
         public string Bairro { get; private set; }
         public int CidadeId { get; private set; }
         public virtual Cidade Cidade { get; private set; }
-        public int PilotoId { get; }
+        public int PilotoId { get; private set; }
         public virtual Piloto Piloto { get; private set; }
 
         #endregion Properties
@@ -35,15 +35,14 @@ namespace Pilotos.Domain.Entities
 
         #region Update
 
-        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
+        public void Update(string cep, string logradouro, int numero, string complemento, string bairro)
         {
             this
                 .UpdateCep(cep)
                 .UpdateLogradouro(logradouro)
                 .UpdateNumero(numero)
                 .UpdateComplemento(complemento)
-                .UpdateBairro(bairro)
-                .UpdateCidade(cidadeId);
+                .UpdateBairro(bairro);
         }
 
         public Endereco UpdateCep(string cep)
@@ -79,6 +78,12 @@ namespace Pilotos.Domain.Entities
         public Endereco UpdateCidade(int cidadeId)
         {
             CidadeId = cidadeId;
+            return this;
+        }
+
+        public Endereco UpdatePiloto(int pilotoId)
+        {
+            PilotoId = pilotoId;
             return this;
         }
 

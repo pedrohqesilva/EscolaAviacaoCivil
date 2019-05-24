@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
+﻿using Core.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Aeroportos.Domain.Entities
 {
@@ -11,7 +11,7 @@ namespace Aeroportos.Domain.Entities
         public string Descricao { get; private set; }
         public int EstadoId { get; private set; }
         public virtual Estado Estado { get; private set; }
-        public virtual IList<Endereco> Enderecos { get; set; }
+        public virtual IList<Endereco> Enderecos { get; private set; }
 
         #endregion Properties
 
@@ -28,12 +28,11 @@ namespace Aeroportos.Domain.Entities
 
         #region Update
 
-        public void Update(string sigla, string descricao, int estadoId)
+        public void Update(string sigla, string descricao)
         {
             this
                 .UpdateSigla(sigla)
-                .UpdateDescricao(descricao)
-                .UpdateEstado(estadoId);
+                .UpdateDescricao(descricao);
         }
 
         public Cidade UpdateSigla(string sigla)

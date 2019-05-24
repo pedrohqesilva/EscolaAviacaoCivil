@@ -30,13 +30,12 @@ namespace Avioes.Domain.Entities
 
         #region Update
 
-        public void Update(string abreviacao, string descricao, string observacao, int fabricanteId)
+        public void Update(string abreviacao, string descricao, string observacao)
         {
             this
                 .UpdateAbreviacao(abreviacao)
                 .UpdateDescricao(descricao)
-                .UpdateObservacao(observacao)
-                .UpdateFabricante(fabricanteId);
+                .UpdateObservacao(observacao);
         }
 
         public Modelo UpdateAbreviacao(string abreviacao)

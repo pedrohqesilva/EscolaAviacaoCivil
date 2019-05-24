@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Core.Domain.Entities;
+﻿using Core.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Pilotos.Domain.Entities
 {
@@ -11,7 +11,7 @@ namespace Pilotos.Domain.Entities
         public string Descricao { get; private set; }
         public int PaisId { get; private set; }
         public virtual Pais Pais { get; private set; }
-        public virtual IList<Cidade> Cidades { get; set; }
+        public virtual IList<Cidade> Cidades { get; private set; }
 
         #endregion Properties
 
@@ -28,12 +28,11 @@ namespace Pilotos.Domain.Entities
 
         #region Update
 
-        public void Update(string sigla, string descricao, int paisId)
+        public void Update(string sigla, string descricao)
         {
             this
                 .UpdateSigla(sigla)
-                .UpdateDescricao(descricao)
-                .UpdatePais(paisId);
+                .UpdateDescricao(descricao);
         }
 
         public Estado UpdateSigla(string sigla)
