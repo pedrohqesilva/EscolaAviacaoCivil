@@ -4,6 +4,8 @@ namespace Aeroportos.Domain.Entities
 {
     public class Endereco : BaseEntity
     {
+        #region Properties
+
         public string Cep { get; private set; }
         public string Logradouro { get; private set; }
         public int Numero { get; private set; }
@@ -13,6 +15,10 @@ namespace Aeroportos.Domain.Entities
         public virtual Cidade Cidade { get; private set; }
         public int AeroportoId { get; private set; }
         public virtual Aeroporto Aeroporto { get; private set; }
+
+        #endregion Properties
+
+        #region Constructors
 
         public Endereco(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int aeroportoId)
         {
@@ -24,6 +30,10 @@ namespace Aeroportos.Domain.Entities
             CidadeId = cidadeId;
             AeroportoId = aeroportoId;
         }
+
+        #endregion Constructors
+
+        #region Update
 
         public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
         {
@@ -38,44 +48,40 @@ namespace Aeroportos.Domain.Entities
 
         public Endereco UpdateCep(string cep)
         {
-            Metadata.Update();
             Cep = cep;
             return this;
         }
 
         public Endereco UpdateLogradouro(string logradouro)
         {
-            Metadata.Update();
             Logradouro = logradouro;
             return this;
         }
 
         public Endereco UpdateNumero(int numero)
         {
-            Metadata.Update();
             Numero = numero;
             return this;
         }
 
         public Endereco UpdateComplemento(string complemento)
         {
-            Metadata.Update();
             Complemento = complemento;
             return this;
         }
 
         public Endereco UpdateBairro(string bairro)
         {
-            Metadata.Update();
             Bairro = bairro;
             return this;
         }
 
         public Endereco UpdateCidade(int cidadeId)
         {
-            Metadata.Update();
             CidadeId = cidadeId;
             return this;
         }
+
+        #endregion Update
     }
 }
