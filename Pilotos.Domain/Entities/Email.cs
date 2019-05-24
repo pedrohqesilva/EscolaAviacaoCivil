@@ -4,9 +4,15 @@ namespace Pilotos.Domain.Entities
 {
     public class Email : BaseEntity
     {
+        #region Properties
+
         public string Endereco { get; private set; }
-        public int PilotoId { get; private set; }
-        public Piloto Piloto { get; private set; }
+        public int PilotoId { get; }
+        public virtual Piloto Piloto { get; private set; }
+
+        #endregion Properties
+
+        #region Constructors
 
         public Email(string endereco, int pilotoId)
         {
@@ -14,10 +20,15 @@ namespace Pilotos.Domain.Entities
             PilotoId = pilotoId;
         }
 
-        public Email UpdateEndereco(string endereco)
+        #endregion Constructors
+
+        #region Update
+
+        public void Update(string endereco)
         {
             Endereco = endereco;
-            return this;
         }
+
+        #endregion Update
     }
 }

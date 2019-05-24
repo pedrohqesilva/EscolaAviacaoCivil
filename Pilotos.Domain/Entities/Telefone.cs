@@ -4,10 +4,16 @@ namespace Pilotos.Domain.Entities
 {
     public class Telefone : BaseEntity
     {
+        #region Properties
+
         public int DDD { get; private set; }
         public int Numero { get; private set; }
-        public int PilotoId { get; private set; }
+        public int PilotoId { get; }
         public Piloto Piloto { get; private set; }
+
+        #endregion Properties
+
+        #region Constructors
 
         public Telefone(int ddd, int numero, int pilotoId)
         {
@@ -15,6 +21,10 @@ namespace Pilotos.Domain.Entities
             Numero = numero;
             PilotoId = pilotoId;
         }
+
+        #endregion Constructors
+
+        #region Update
 
         public void Update(int ddd, int numero)
         {
@@ -34,5 +44,7 @@ namespace Pilotos.Domain.Entities
             Numero = numero;
             return this;
         }
+
+        #endregion Update
     }
 }

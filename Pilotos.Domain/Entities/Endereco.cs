@@ -1,10 +1,11 @@
-﻿using Aeroportos.Domain.Entities;
-using Core.Domain.Entities;
+﻿using Core.Domain.Entities;
 
 namespace Pilotos.Domain.Entities
 {
     public class Endereco : BaseEntity
     {
+        #region Properties
+
         public string Cep { get; private set; }
         public string Logradouro { get; private set; }
         public int Numero { get; private set; }
@@ -12,8 +13,12 @@ namespace Pilotos.Domain.Entities
         public string Bairro { get; private set; }
         public int CidadeId { get; private set; }
         public virtual Cidade Cidade { get; private set; }
-        public int PilotoId { get; private set; }
+        public int PilotoId { get; }
         public virtual Piloto Piloto { get; private set; }
+
+        #endregion Properties
+
+        #region Constructors
 
         public Endereco(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int pilotoId)
         {
@@ -25,6 +30,10 @@ namespace Pilotos.Domain.Entities
             CidadeId = cidadeId;
             PilotoId = pilotoId;
         }
+
+        #endregion Constructors
+
+        #region Update
 
         public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
         {
@@ -72,5 +81,7 @@ namespace Pilotos.Domain.Entities
             CidadeId = cidadeId;
             return this;
         }
+
+        #endregion Update
     }
 }
