@@ -11,20 +11,20 @@ namespace Aeroportos.Domain.Entities
         public string Descricao { get; private set; }
         public int TipoAeroportoId { get; private set; }
         public virtual TipoAeroporto TipoAeroporto { get; private set; }
-        public int CidadeId { get; private set; }
-        public virtual Cidade Cidade { get; private set; }
+        public int EnderecoId { get; private set; }
+        public virtual Endereco Endereco { get; private set; }
 
         #endregion Properties
 
         #region Constructors
 
-        public Aeroporto(string codigoIcao, string nome, string descricao, int tipoAeroportoId, int cidadeId)
+        public Aeroporto(string codigoIcao, string nome, string descricao, int enderecoId, int tipoAeroportoId)
         {
             CodigoIcao = codigoIcao;
             Nome = nome;
             Descricao = descricao;
+            EnderecoId = enderecoId;
             TipoAeroportoId = tipoAeroportoId;
-            CidadeId = cidadeId;
         }
 
         #endregion Constructors
@@ -57,15 +57,15 @@ namespace Aeroportos.Domain.Entities
             return this;
         }
 
-        public Aeroporto UpdateTipoAeroporto(int tipoAeroportoId)
+        public Aeroporto UpdateEndereco(int enderecoId)
         {
-            TipoAeroportoId = tipoAeroportoId;
+            EnderecoId = enderecoId;
             return this;
         }
 
-        public Aeroporto UpdateCidade(int cidadeId)
+        public Aeroporto UpdateTipoAeroporto(int tipoAeroportoId)
         {
-            CidadeId = cidadeId;
+            TipoAeroportoId = tipoAeroportoId;
             return this;
         }
 

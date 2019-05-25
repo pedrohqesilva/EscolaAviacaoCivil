@@ -1,29 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aeroportos", "Aeroportos", "{C810DE6D-FAB3-44C8-9AC8-C1CA7FCABEE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F63A2405-B894-46BF-AF1D-6120DEC541D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aeroportos.Domain", "Aeroportos.Domain\Aeroportos.Domain.csproj", "{4E2DE370-273B-42DB-9EB4-7D259136358D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Domain", "Aeroportos.Domain\Aeroportos.Domain.csproj", "{4E2DE370-273B-42DB-9EB4-7D259136358D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1034ECD7-595F-478E-A3D2-506D57C0D831}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{A0F7AF2D-662F-4308-B867-A389674449C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{D63FB38B-3DF9-4248-974A-FEF4B408F828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{D63FB38B-3DF9-4248-974A-FEF4B408F828}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avioes", "Avioes", "{8AE76BE3-E862-452E-8D61-B5C0F0D20F4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1C6F80F2-8424-40B5-BE59-83C29EBC2063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avioes.Domain", "Avioes.Domain\Avioes.Domain.csproj", "{3B3D1DF5-A787-4184-8337-F0F25AED69E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avioes.Domain", "Avioes.Domain\Avioes.Domain.csproj", "{3B3D1DF5-A787-4184-8337-F0F25AED69E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pilotos", "Pilotos", "{EBAAA000-98DE-4F01-BF08-32DA73150A3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pilotos.Domain", "Pilotos.Domain\Pilotos.Domain.csproj", "{F92D765E-53ED-4039-89C6-41A12145AA75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilotos.Domain", "Pilotos.Domain\Pilotos.Domain.csproj", "{F92D765E-53ED-4039-89C6-41A12145AA75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AB8F1290-F475-4D47-BD4A-C25FAFDD73D9}"
 EndProject
@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Missoes", "Missoes", "{AE10
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{39ED6F6A-EAE8-46CE-9D97-59E16B779277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Missoes.Domain", "Missoes.Domain\Missoes.Domain.csproj", "{2A03DDED-0328-43C3-A060-6CB991D049D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Missoes.Domain", "Missoes.Domain\Missoes.Domain.csproj", "{2A03DDED-0328-43C3-A060-6CB991D049D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9995E7D5-AC03-494B-BD38-89C54865899C}"
 EndProject
@@ -40,6 +40,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6AC4B225-7A9C-499C-88EC-5347A1EED9A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{0DC0E5EC-D890-4A31-8C4A-B714D76C6BFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Context", "Context", "{FD2EE50F-FE8D-4FFB-807D-6A2E0D3DAF60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aeroportos.Context", "Aeroportos.Context\Aeroportos.Context.csproj", "{587A31E6-EE87-4669-900E-DC5259ECC714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,10 @@ Global
 		{2A03DDED-0328-43C3-A060-6CB991D049D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A03DDED-0328-43C3-A060-6CB991D049D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A03DDED-0328-43C3-A060-6CB991D049D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587A31E6-EE87-4669-900E-DC5259ECC714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587A31E6-EE87-4669-900E-DC5259ECC714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587A31E6-EE87-4669-900E-DC5259ECC714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587A31E6-EE87-4669-900E-DC5259ECC714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,8 @@ Global
 		{7865E730-E63C-4960-9CA7-F2E5A308CE11} = {C810DE6D-FAB3-44C8-9AC8-C1CA7FCABEE7}
 		{6AC4B225-7A9C-499C-88EC-5347A1EED9A4} = {7865E730-E63C-4960-9CA7-F2E5A308CE11}
 		{0DC0E5EC-D890-4A31-8C4A-B714D76C6BFA} = {7865E730-E63C-4960-9CA7-F2E5A308CE11}
+		{FD2EE50F-FE8D-4FFB-807D-6A2E0D3DAF60} = {C810DE6D-FAB3-44C8-9AC8-C1CA7FCABEE7}
+		{587A31E6-EE87-4669-900E-DC5259ECC714} = {FD2EE50F-FE8D-4FFB-807D-6A2E0D3DAF60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BC3E88B-2CC5-4EB1-A29B-DC0CECEF3011}
