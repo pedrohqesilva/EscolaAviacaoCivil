@@ -11,6 +11,10 @@ namespace Aeroportos.Context
         {
         }
 
+        public Context(DbContextOptions<Context> options) : base(options)
+        {
+        }
+
         public DbSet<Aeroporto> Aeroporto { get; set; }
         public DbSet<TipoAeroporto> TipoAeroporto { get; set; }
         public DbSet<Endereco> Endereco { get; set; }

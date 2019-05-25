@@ -9,13 +9,41 @@ namespace Aeroportos.Context.Mappings.Base
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
             builder
-                .HasKey(h => h.Id)
-                .HasName("ID");
+                .HasKey(h => h.Id);
+
+            builder
+                .HasAlternateKey(p => p.Guid);
+
+            builder
+                .Property(p => p.Id)
+                .HasColumnName("ID");
 
             builder
                 .Property(p => p.Guid)
                 .HasColumnName("GUID")
-                .HasMaxLength(36);
+                .HasDefaultValueSql("NEWID()")
+                .IsRequired();
+
+            builder
+                .Property(p => p.DataCriacao)
+                .HasColumnName("DATA_CRIACAO")
+                .HasDefaultValueSql("GETDATE()")
+                .IsRequired();
+
+            builder
+                .Property(p => p.DataModificacao)
+                .HasColumnName("DATA_MODIFICACAO")
+                .IsRequired(false);
+
+            builder
+                .Property(p => p.DataExclusao)
+                .HasColumnName("DATA_EXCLUSAO")
+                .IsRequired(false);
+
+            builder
+                .Property(p => p.IsExcluido)
+                .HasColumnName("EXCLUIDO")
+                .IsRequired();
         }
     }
 }

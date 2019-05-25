@@ -1,5 +1,6 @@
 ﻿using Aeroportos.Context.Mappings.Base;
 using Aeroportos.Domain.Entities;
+using Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,6 +14,9 @@ namespace Aeroportos.Context.Mappings
 
             builder
                 .ToTable("AEROPORTO");
+
+            builder
+                .HasAlternateKey(p => p.CodigoIcao);
 
             builder
                 .Property(p => p.CodigoIcao)

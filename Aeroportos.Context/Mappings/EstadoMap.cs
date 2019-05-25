@@ -15,6 +15,9 @@ namespace Aeroportos.Context.Mappings
                 .ToTable("ESTADO");
 
             builder
+                .HasAlternateKey(p => p.Sigla);
+
+            builder
                 .Property(p => p.Sigla)
                 .HasColumnName("SIGLA")
                 .HasMaxLength(5)
