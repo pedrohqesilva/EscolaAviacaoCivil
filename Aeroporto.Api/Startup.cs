@@ -52,6 +52,13 @@ namespace Aeroporto.Api
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                var apiJsonUrl = "../swagger/v1/swagger.json";
+                c.SwaggerEndpoint(apiJsonUrl, "Aeroporto Api V1");
+            });
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }
