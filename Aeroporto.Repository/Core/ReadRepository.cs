@@ -1,4 +1,5 @@
 ﻿using Aeroportos.Domain.Interfaces.Repositories.Base;
+using Aeroportos.Domain.Interfaces.Specifications;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
