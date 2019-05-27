@@ -1,7 +1,7 @@
 ﻿using Aeroportos.Infrastructure.Data.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aeroportos.Infrastructure.Data.Base
+namespace Aeroportos.Repository.Base
 {
     public class ReadOnlyBaseRepository<T> : ReadRepository<T> where T : class
     {

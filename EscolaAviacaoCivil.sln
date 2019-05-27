@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC", "CrossCu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroporto.Api", "Aeroporto.Api\Aeroporto.Api.csproj", "{8607D900-7771-41F3-8D29-568882F90A37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aeroporto.Repository", "Aeroporto.Repository\Aeroporto.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aeroportos.Repository", "Aeroporto.Repository\Aeroportos.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

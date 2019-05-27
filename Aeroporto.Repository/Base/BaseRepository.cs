@@ -1,7 +1,7 @@
 ﻿using Aeroportos.Infrastructure.Data.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aeroportos.Infrastructure.Data.Base
+namespace AAeroportos.Repository.Base
 {
     public class BaseRepository<T> : ReadWriteRepository<T> where T : class
     {

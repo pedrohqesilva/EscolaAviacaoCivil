@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Aeroportos.Infrastructure.Data.Core.Interfaces
+namespace Aeroportos.Repository.Core.Interfaces
 {
     public interface ISpecification<T>
     {

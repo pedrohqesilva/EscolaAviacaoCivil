@@ -1,4 +1,4 @@
-﻿using Aeroportos.Infrastructure.Data.Core.Interfaces;
+﻿using Aeroportos.Repository.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Infrastructure.Data.Core
+namespace Aeroportos.Repository.Core
 {
     public class ReadWriteRepository<T> : IReadWriteRepository<T> where T : class
     {

@@ -1,10 +1,10 @@
-﻿using Aeroportos.Infrastructure.Data.Core.Interfaces;
+﻿using Aeroportos.Repository.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Infrastructure.Data.Core
+namespace Aeroportos.Repository.Core
 {
     public class WriteRepository<T> : IWriteRepository<T> where T : class
     {

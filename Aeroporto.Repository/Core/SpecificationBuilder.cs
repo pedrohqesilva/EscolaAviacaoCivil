@@ -1,9 +1,9 @@
-﻿using Aeroportos.Infrastructure.Data.Core.Interfaces;
+﻿using Aeroportos.Repository.Core.Interfaces;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Aeroportos.Infrastructure.Data.Core
+namespace Aeroportos.Repository.Core
 {
     public sealed class SpecificationBuilder<T> : ISpecification<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace Aeroportos.Infrastructure.Data.Core.Interfaces
+﻿namespace Aeroportos.Repository.Core.Interfaces
 {
     public interface IReadWriteRepository<T> : IReadRepository<T>, IWriteRepository<T>
     {
