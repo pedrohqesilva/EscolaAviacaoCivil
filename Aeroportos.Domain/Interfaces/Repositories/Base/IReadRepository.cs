@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Repository.Core.Interfaces
+namespace Aeroportos.Domain.Interfaces.Repositories.Base
 {
     public interface IReadRepository<T>
     {

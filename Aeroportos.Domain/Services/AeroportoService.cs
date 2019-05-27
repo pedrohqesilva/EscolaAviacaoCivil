@@ -1,4 +1,5 @@
 ﻿using Aeroportos.Domain.Entities;
+using Aeroportos.Domain.Interfaces.Repositories;
 using Aeroportos.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -9,8 +10,11 @@ namespace Aeroportos.Domain.Services
 {
     public class AeroportoService : IAeroportoService
     {
-        public AeroportoService()
+        private readonly IAeroportoRepository _aeroportoRepository;
+
+        public AeroportoService(IAeroportoRepository aeroportoRepository)
         {
+            _aeroportoRepository = aeroportoRepository;
         }
 
         public Task AdicionarAsync(Aeroporto aeroporto, CancellationToken cancellationToken)

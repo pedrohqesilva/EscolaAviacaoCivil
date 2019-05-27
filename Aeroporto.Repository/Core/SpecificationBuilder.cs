@@ -1,4 +1,4 @@
-﻿using Aeroportos.Repository.Core.Interfaces;
+﻿using Aeroportos.Domain.Interfaces.Repositories.Base;
 using System;
 using System.Linq;
 using System.Linq.Expressions;

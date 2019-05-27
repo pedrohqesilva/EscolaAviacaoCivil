@@ -1,9 +1,10 @@
-﻿using Aeroportos.Repository.Core;
+﻿using Aeroportos.Domain.Interfaces.Repositories.Base;
+using Aeroportos.Repository.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aeroportos.Repository.Base
 {
-    public class ReadOnlyBaseRepository<T> : ReadRepository<T> where T : class
+    public class ReadOnlyBaseRepository<T> : ReadRepository<T>, IReadRepository<T> where T : class
     {
         protected Context.Context Context { get; }
         private readonly DbSet<T> DbSet;
