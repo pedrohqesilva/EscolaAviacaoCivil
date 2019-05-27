@@ -1,6 +1,5 @@
 ﻿using Aeroportos.Context.Mappings.Base;
 using Aeroportos.Domain.Entities;
-using Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

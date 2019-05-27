@@ -2,10 +2,6 @@
 using CrossCutting.IoC.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CrossCutting.IoC.Containers
 {

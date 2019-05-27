@@ -11,27 +11,27 @@ namespace Aeroportos.Repository.Core
 {
     public class ReadRepository<T> : IReadRepository<T> where T : class
     {
-        private readonly Aeroportos.Context.Context _contexto;
+        private readonly Context.Context _contexto;
 
-        public ReadRepository(Aeroportos.Context.Context context)
+        public ReadRepository(Context.Context context)
         {
             _contexto = context;
         }
 
-        public async virtual Task<T> FindAsync(object[] keys, CancellationToken cancellationToken)
+        public virtual async Task<T> FindAsync(object[] keys, CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().FindAsync(keys, cancellationToken);
             return entity;
         }
 
-        public async virtual Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, CancellationToken cancellationToken)
         {
             var query = specification.Prepare(_contexto.Set<T>().AsQueryable());
             var result = await query.ToListAsync(cancellationToken);
             return result;
         }
 
-        public async virtual Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, int pageNumber, int pageSize, CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             var entities = await specification
                 .Prepare(_contexto.Set<T>().AsQueryable())
@@ -62,41 +62,41 @@ namespace Aeroportos.Repository.Core
             return Where(specification.Predicate);
         }
 
-        public async virtual Task<long> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<long> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
             var result = await _contexto.Set<T>().LongCountAsync(predicate, cancellationToken);
             return result;
         }
 
-        public async virtual Task<long> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<long> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken)
         {
             return await CountAsync(specification.Predicate, cancellationToken);
         }
 
-        public async virtual Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
             var count = await CountAsync(predicate, cancellationToken);
             return count > 0;
         }
 
-        public async virtual Task<bool> ExistsAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<bool> ExistsAsync(ISpecification<T> specification, CancellationToken cancellationToken)
         {
             return await ExistsAsync(specification.Predicate, cancellationToken);
         }
 
-        public async virtual Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().FirstOrDefaultAsync(predicate, cancellationToken);
             return entity;
         }
 
-        public async virtual Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().LastOrDefaultAsync(predicate, cancellationToken);
             return entity;
         }
 
-        public virtual IQueryable<T> AsQuerable()
+        public virtual IQueryable<T> AsQueryable()
         {
             return _contexto.Set<T>().AsQueryable();
         }

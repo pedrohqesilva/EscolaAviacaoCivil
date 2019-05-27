@@ -33,6 +33,6 @@ namespace Aeroportos.Repository.Core.Interfaces
 
         Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
 
-        IQueryable<T> AsQuerable();
+        IQueryable<T> AsQueryable();
     }
 }

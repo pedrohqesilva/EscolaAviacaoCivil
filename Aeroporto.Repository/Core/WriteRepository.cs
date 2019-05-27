@@ -8,16 +8,16 @@ namespace Aeroportos.Repository.Core
 {
     public class WriteRepository<T> : IWriteRepository<T> where T : class
     {
-        private readonly Aeroportos.Context.Context _contexto;
+        private readonly Context.Context _contexto;
 
-        public WriteRepository(Aeroportos.Context.Context context)
+        public WriteRepository(Context.Context context)
         {
             _contexto = context;
         }
 
         public virtual Task AddAsync(T entity, CancellationToken cancellationToken)
         {
-            var result = _contexto.Set<T>().AddAsync(entity);
+            var result = _contexto.Set<T>().AddAsync(entity, cancellationToken);
             return result;
         }
 

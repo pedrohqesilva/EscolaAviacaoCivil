@@ -1,9 +1,9 @@
 ﻿using Aeroportos.Domain.Entities;
-using Aeroportos.Repository.Core;
+using Aeroportos.Repository.Base;
 
 namespace Aeroportos.Repository
 {
-    internal class AeroportosRepository : WriteRepository<Aeroporto>
+    internal class AeroportosRepository : BaseRepository<Aeroporto>
     {
         public AeroportosRepository(Context.Context context) : base(context)
         {
