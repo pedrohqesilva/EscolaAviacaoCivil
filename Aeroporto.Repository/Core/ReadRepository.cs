@@ -91,10 +91,20 @@ namespace Aeroportos.Repository.Core
             return entity;
         }
 
+        public virtual async Task<T> FirstOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        {
+            return await FirstOrDefaultAsync(specification.Predicate, cancellationToken);
+        }
+
         public virtual async Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().LastOrDefaultAsync(predicate, cancellationToken);
             return entity;
+        }
+
+        public virtual async Task<T> LastOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        {
+            return await LastOrDefaultAsync(specification.Predicate, cancellationToken);
         }
 
         public virtual IQueryable<T> AsQueryable()

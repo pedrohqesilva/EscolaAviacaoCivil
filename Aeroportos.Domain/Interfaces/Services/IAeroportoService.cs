@@ -11,10 +11,10 @@ namespace Aeroportos.Domain.Interfaces.Services
 
         Task AlterarAsync(string codigoIcao, string nome, string descricao, CancellationToken cancellationToken);
 
-        Task RemoverAsync(Aeroporto aeroporto, CancellationToken cancellationToken);
+        void Remover(Aeroporto aeroporto);
 
-        Task<IList<Aeroporto>> ObterAeroportos(CancellationToken cancellationToken);
+        Task<Aeroporto> ObterPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken);
 
-        Task<Aeroporto> ObterAeroportoPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken);
+        Task<IEnumerable<Aeroporto>> ObterPorTipoAeroporto(int codigoTipoAeroporto, CancellationToken cancellationToken);
     }
 }

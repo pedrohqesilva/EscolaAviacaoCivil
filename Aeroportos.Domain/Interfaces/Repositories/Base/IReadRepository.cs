@@ -32,7 +32,11 @@ namespace Aeroportos.Domain.Interfaces.Repositories.Base
 
         Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
 
+        Task<T> FirstOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken);
+
         Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
+
+        Task<T> LastOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken);
 
         IQueryable<T> AsQueryable();
     }

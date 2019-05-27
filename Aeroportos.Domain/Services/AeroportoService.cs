@@ -1,7 +1,7 @@
 ﻿using Aeroportos.Domain.Entities;
 using Aeroportos.Domain.Interfaces.Repositories;
 using Aeroportos.Domain.Interfaces.Services;
-using System;
+using Aeroportos.Domain.Specifications;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,27 +19,42 @@ namespace Aeroportos.Domain.Services
 
         public Task AdicionarAsync(Aeroporto aeroporto, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return _aeroportoRepository.AddAsync(aeroporto, cancellationToken);
         }
 
-        public Task AlterarAsync(string codigoIcao, string nome, string descricao, CancellationToken cancellationToken)
+        public async Task AlterarAsync(string codigoIcao, string nome, string descricao, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var spec = SpecificationBuilder<Aeroporto>.Create()
+                .ComCodigoIcao(codigoIcao)
+                .NaoExcluido();
+
+            var aeroporto = await _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
+            aeroporto.Update(nome, descricao);
+
+            _aeroportoRepository.Update(aeroporto);
         }
 
-        public Task<Aeroporto> ObterAeroportoPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken)
+        public void Remover(Aeroporto aeroporto)
         {
-            throw new NotImplementedException();
+            _aeroportoRepository.Remove(aeroporto);
         }
 
-        public Task<IList<Aeroporto>> ObterAeroportos(CancellationToken cancellationToken)
+        public Task<Aeroporto> ObterPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var spec = SpecificationBuilder<Aeroporto>.Create()
+                .ComCodigoIcao(codigoIcao)
+                .NaoExcluido();
+
+            return _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
         }
 
-        public Task RemoverAsync(Aeroporto aeroporto, CancellationToken cancellationToken)
+        public Task<IEnumerable<Aeroporto>> ObterPorTipoAeroporto(int codigoTipoAeroporto, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var spec = SpecificationBuilder<Aeroporto>.Create()
+                .ComCodigoTipoAeroporto(codigoTipoAeroporto)
+                .NaoExcluido();
+
+            return _aeroportoRepository.SearchAsync(spec, cancellationToken);
         }
     }
 }
