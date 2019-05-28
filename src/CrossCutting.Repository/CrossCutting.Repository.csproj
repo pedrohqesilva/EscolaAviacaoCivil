@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core.Domain\Core.Domain.csproj" />
-    <ProjectReference Include="..\CrossCutting.Repository\CrossCutting.Repository.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Context\Core.Context.csproj" />
     <ProjectReference Include="..\CrossCutting.Specification\CrossCutting.Specification.csproj" />
   </ItemGroup>
 

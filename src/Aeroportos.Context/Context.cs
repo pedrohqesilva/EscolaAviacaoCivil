@@ -4,16 +4,17 @@ using Aeroportos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using Core.Context;
 
 namespace Aeroportos.Context
 {
-    public class Context : DbContext
+    public class Context : CoreContext
     {
         public Context() : base()
         {
         }
 
-        public Context(DbContextOptions<Context> options) : base(options)
+        public Context(DbContextOptions options) : base(options)
         {
         }
 
@@ -41,21 +42,9 @@ namespace Aeroportos.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
                 optionsBuilder
                     .UseLazyLoadingProxies()
                     .UseInMemoryDatabase("dbAeroportos");
-            }
-        }
-
-        private void StringConfiguration(ModelBuilder modelBuilder)
-        {
-            foreach (var property in modelBuilder.Model.GetEntityTypes()
-                .SelectMany(t => t.GetProperties())
-                .Where(p => p.ClrType == typeof(string)))
-            {
-                property.IsUnicode(true);
-            }
         }
 
         private void RunSeeds(ModelBuilder modelBuilder)
@@ -65,8 +54,8 @@ namespace Aeroportos.Context
             var types = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
                 .Where(p => typeSeed.IsAssignableFrom(p)
-                         && !p.IsInterface
-                         && !p.IsAbstract);
+                            && !p.IsInterface
+                            && !p.IsAbstract);
 
             foreach (var type in types)
             {

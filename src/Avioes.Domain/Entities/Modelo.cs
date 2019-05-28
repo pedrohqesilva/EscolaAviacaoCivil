@@ -32,10 +32,9 @@ namespace Avioes.Domain.Entities
 
         public void Update(string abreviacao, string descricao, string observacao)
         {
-            this
-                .UpdateAbreviacao(abreviacao)
-                .UpdateDescricao(descricao)
-                .UpdateObservacao(observacao);
+            UpdateAbreviacao(abreviacao)
+            .UpdateDescricao(descricao)
+            .UpdateObservacao(observacao);
         }
 
         public Modelo UpdateAbreviacao(string abreviacao)

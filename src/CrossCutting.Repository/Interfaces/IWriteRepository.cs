@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Domain.Interfaces.Repositories.Base
+namespace CrossCutting.Repository.Interfaces
 {
     public interface IWriteRepository<T>
     {

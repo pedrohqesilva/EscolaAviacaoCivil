@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aeroportos.Domain\Aeroportos.Domain.csproj" />
+    <ProjectReference Include="..\Core.Context\Core.Context.csproj" />
   </ItemGroup>
 
 </Project>

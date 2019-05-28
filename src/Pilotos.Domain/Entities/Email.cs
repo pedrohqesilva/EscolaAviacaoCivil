@@ -26,8 +26,7 @@ namespace Pilotos.Domain.Entities
 
         public void Update(string endereco)
         {
-            this
-                .UpdateEndereco(endereco);
+            UpdateEndereco(endereco);
         }
 
         public Email UpdateEndereco(string endereco)

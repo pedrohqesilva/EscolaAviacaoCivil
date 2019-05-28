@@ -1,16 +1,17 @@
-﻿using Aeroportos.Domain.Interfaces.Repositories.Base;
+﻿using Core.Context;
+using CrossCutting.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Repository.Core
+namespace CrossCutting.Repository
 {
     public class WriteRepository<T> : IWriteRepository<T> where T : class
     {
-        private readonly Context.Context _contexto;
+        private readonly CoreContext _contexto;
 
-        public WriteRepository(Context.Context context)
+        public WriteRepository(CoreContext context)
         {
             _contexto = context;
         }

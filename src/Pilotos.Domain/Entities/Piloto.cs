@@ -24,7 +24,8 @@ namespace Pilotos.Domain.Entities
 
         #region Constructors
 
-        public Piloto(string nome, string cpf, DateTime dataNascimento, string formacaoAcademica, string observacao, string sexo, int carteiraAnacId)
+        public Piloto(string nome, string cpf, DateTime dataNascimento, string formacaoAcademica,
+            string observacao, string sexo, int carteiraAnacId)
         {
             Nome = nome;
             Cpf = cpf;
@@ -39,15 +40,15 @@ namespace Pilotos.Domain.Entities
 
         #region Update
 
-        public void Update(string nome, string cpf, DateTime dataNascimento, string formacaoAcademica, string observacao, string sexo)
+        public void Update(string nome, string cpf, DateTime dataNascimento,
+            string formacaoAcademica, string observacao, string sexo)
         {
-            this
-                .UpdateNome(nome)
-                .UpdateCpf(cpf)
-                .UpdateDataNascimento(dataNascimento)
-                .UpdateFormacaoAcademica(formacaoAcademica)
-                .UpdateObservacao(observacao)
-                .UpdateSexo(sexo);
+            UpdateNome(nome)
+            .UpdateCpf(cpf)
+            .UpdateDataNascimento(dataNascimento)
+            .UpdateFormacaoAcademica(formacaoAcademica)
+            .UpdateObservacao(observacao)
+            .UpdateSexo(sexo);
         }
 
         public Piloto UpdateNome(string nome)

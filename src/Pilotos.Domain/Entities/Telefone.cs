@@ -28,9 +28,8 @@ namespace Pilotos.Domain.Entities
 
         public void Update(int ddd, int numero)
         {
-            this
-                .UpdateDDD(ddd)
-                .UpdateNumero(numero);
+            UpdateDDD(ddd)
+            .UpdateNumero(numero);
         }
 
         public Telefone UpdateDDD(int ddd)

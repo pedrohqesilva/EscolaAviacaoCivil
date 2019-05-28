@@ -27,9 +27,8 @@ namespace Pilotos.Domain.Entities
 
         public void Update(string sigla, string descricao)
         {
-            this
-                .UpdateSigla(sigla)
-                .UpdateDescricao(descricao);
+            UpdateSigla(sigla)
+            .UpdateDescricao(descricao);
         }
 
         public Pais UpdateSigla(string sigla)

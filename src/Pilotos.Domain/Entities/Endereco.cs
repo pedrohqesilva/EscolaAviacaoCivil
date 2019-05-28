@@ -20,7 +20,8 @@ namespace Pilotos.Domain.Entities
 
         #region Constructors
 
-        public Endereco(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int pilotoId)
+        public Endereco(string cep, string logradouro, int numero, string complemento,
+            string bairro, int cidadeId, int pilotoId)
         {
             Cep = cep;
             Logradouro = logradouro;
@@ -35,14 +36,14 @@ namespace Pilotos.Domain.Entities
 
         #region Update
 
-        public void Update(string cep, string logradouro, int numero, string complemento, string bairro)
+        public void Update(string cep, string logradouro, int numero,
+            string complemento, string bairro)
         {
-            this
-                .UpdateCep(cep)
-                .UpdateLogradouro(logradouro)
-                .UpdateNumero(numero)
-                .UpdateComplemento(complemento)
-                .UpdateBairro(bairro);
+            UpdateCep(cep)
+            .UpdateLogradouro(logradouro)
+            .UpdateNumero(numero)
+            .UpdateComplemento(complemento)
+            .UpdateBairro(bairro);
         }
 
         public Endereco UpdateCep(string cep)

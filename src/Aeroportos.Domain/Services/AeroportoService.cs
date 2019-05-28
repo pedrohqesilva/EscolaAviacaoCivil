@@ -2,6 +2,7 @@
 using Aeroportos.Domain.Interfaces.Repositories;
 using Aeroportos.Domain.Interfaces.Services;
 using Aeroportos.Domain.Specifications;
+using CrossCutting.Specification;
 using System;
 using System.Collections.Generic;
 using System.Threading;

@@ -29,10 +29,9 @@ namespace Avioes.Domain.Entities
 
         public void Update(string razaoSocial, string nomeFantasia, string descricao)
         {
-            this
-                .UpdateRazaoSocial(razaoSocial)
-                .UpdateNomeFantasia(nomeFantasia)
-                .UpdateDescricao(descricao);
+            UpdateRazaoSocial(razaoSocial)
+            .UpdateNomeFantasia(nomeFantasia)
+            .UpdateDescricao(descricao);
         }
 
         public Fabricante UpdateRazaoSocial(string razaoSocial)

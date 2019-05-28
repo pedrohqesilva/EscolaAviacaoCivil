@@ -1,5 +1,6 @@
-﻿using Aeroportos.Domain.Interfaces.Repositories.Base;
-using Aeroportos.Domain.Interfaces.Specifications;
+﻿using Core.Context;
+using CrossCutting.Repository.Interfaces;
+using CrossCutting.Specification.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aeroportos.Repository.Core
+namespace CrossCutting.Repository
 {
     public class ReadWriteRepository<T> : IReadWriteRepository<T> where T : class
     {
-        private readonly Context.Context _contexto;
+        private readonly CoreContext _contexto;
 
-        public ReadWriteRepository(Context.Context context)
+        public ReadWriteRepository(CoreContext context)
         {
             _contexto = context;
         }
@@ -27,14 +28,16 @@ namespace Aeroportos.Repository.Core
             return entity;
         }
 
-        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification,
+            CancellationToken cancellationToken)
         {
             var query = specification.Prepare(_contexto.Set<T>().AsQueryable());
             var result = await query.ToListAsync(cancellationToken);
             return result;
         }
 
-        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification, int pageNumber, int pageSize, CancellationToken cancellationToken)
+        public virtual async Task<IEnumerable<T>> SearchAsync(ISpecification<T> specification,
+            int pageNumber, int pageSize, CancellationToken cancellationToken)
         {
             var entities = await specification
                 .Prepare(_contexto.Set<T>().AsQueryable())
@@ -50,7 +53,8 @@ namespace Aeroportos.Repository.Core
             return query;
         }
 
-        public virtual IQueryable<T> Where<TProperty>(Expression<Func<T, bool>> predicate, params Expression<Func<T, TProperty>>[] paths)
+        public virtual IQueryable<T> Where<TProperty>(Expression<Func<T, bool>> predicate,
+            params Expression<Func<T, TProperty>>[] paths)
         {
             var query = _contexto.Set<T>().Where(predicate);
 
@@ -65,46 +69,54 @@ namespace Aeroportos.Repository.Core
             return Where(specification.Predicate);
         }
 
-        public virtual async Task<long> CountAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<long> CountAsync(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
             var result = await _contexto.Set<T>().LongCountAsync(predicate, cancellationToken);
             return result;
         }
 
-        public virtual async Task<long> CountAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<long> CountAsync(ISpecification<T> specification,
+            CancellationToken cancellationToken)
         {
             return await CountAsync(specification.Predicate, cancellationToken);
         }
 
-        public virtual async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
             var count = await CountAsync(predicate, cancellationToken);
             return count > 0;
         }
 
-        public virtual async Task<bool> ExistsAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<bool> ExistsAsync(ISpecification<T> specification,
+            CancellationToken cancellationToken)
         {
             return await ExistsAsync(specification.Predicate, cancellationToken);
         }
 
-        public virtual async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().FirstOrDefaultAsync(predicate, cancellationToken);
             return entity;
         }
 
-        public virtual async Task<T> FirstOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<T> FirstOrDefaultAsync(ISpecification<T> specification,
+            CancellationToken cancellationToken)
         {
             return await FirstOrDefaultAsync(specification.Predicate, cancellationToken);
         }
 
-        public virtual async Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken)
+        public virtual async Task<T> LastOrDefaultAsync(Expression<Func<T, bool>> predicate,
+            CancellationToken cancellationToken)
         {
             var entity = await _contexto.Set<T>().LastOrDefaultAsync(predicate, cancellationToken);
             return entity;
         }
 
-        public virtual async Task<T> LastOrDefaultAsync(ISpecification<T> specification, CancellationToken cancellationToken)
+        public virtual async Task<T> LastOrDefaultAsync(ISpecification<T> specification,
+            CancellationToken cancellationToken)
         {
             return await LastOrDefaultAsync(specification.Predicate, cancellationToken);
         }
@@ -120,7 +132,7 @@ namespace Aeroportos.Repository.Core
 
         public virtual Task AddAsync(T entity, CancellationToken cancellationToken)
         {
-            var result = _contexto.Set<T>().AddAsync(entity);
+            var result = _contexto.Set<T>().AddAsync(entity, cancellationToken);
             return result;
         }
 

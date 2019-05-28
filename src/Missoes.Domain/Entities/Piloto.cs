@@ -18,7 +18,8 @@ namespace Missoes.Domain.Entities
         public IList<Telefone> Telefones { get; private set; }
         public IList<Email> Emails { get; private set; }
 
-        public Piloto(string nome, string cpf, DateTime dataNascimento, string formacaoAcademica, string observacao, string sexo, int carteiraAnacId)
+        public Piloto(string nome, string cpf, DateTime dataNascimento, string formacaoAcademica,
+            string observacao, string sexo, int carteiraAnacId)
         {
             Nome = nome;
             Cpf = cpf;

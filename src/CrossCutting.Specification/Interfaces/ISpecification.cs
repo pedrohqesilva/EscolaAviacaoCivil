@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Aeroportos.Domain.Interfaces.Specifications
+namespace CrossCutting.Specification.Interfaces
 {
     public interface ISpecification<T>
     {

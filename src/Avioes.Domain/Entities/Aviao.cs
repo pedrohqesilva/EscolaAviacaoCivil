@@ -31,10 +31,9 @@ namespace Avioes.Domain.Entities
 
         public void Update(string matricula, DateTime dataInscricao, string observacao)
         {
-            this
-                .UpdateMatricula(matricula)
-                .UpdateDataInscricao(dataInscricao)
-                .UpdateObservacao(observacao);
+            UpdateMatricula(matricula)
+            .UpdateDataInscricao(dataInscricao)
+            .UpdateObservacao(observacao);
         }
 
         public Aviao UpdateMatricula(string matricula)

@@ -21,10 +21,10 @@
 
             int totalPages;
 
-            int mod = TotalItems % PageSize;
+            var mod = TotalItems % PageSize;
             totalPages = TotalItems / PageSize;
 
-            TotalPages = (mod > 0) ? ++totalPages : totalPages;
+            TotalPages = mod > 0 ? ++totalPages : totalPages;
         }
     }
 }

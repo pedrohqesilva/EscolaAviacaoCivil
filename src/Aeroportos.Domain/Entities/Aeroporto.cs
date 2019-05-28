@@ -33,9 +33,8 @@ namespace Aeroportos.Domain.Entities
 
         public void Update(string nome, string descricao)
         {
-            this
-                .UpdateNome(nome)
-                .UpdateDescricao(descricao);
+            UpdateNome(nome)
+            .UpdateDescricao(descricao);
         }
 
         public Aeroporto UpdateCodigoIcao(string codigoIcao)

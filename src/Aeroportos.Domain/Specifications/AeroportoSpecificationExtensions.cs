@@ -1,5 +1,5 @@
 ﻿using Aeroportos.Domain.Entities;
-using Aeroportos.Domain.Interfaces.Specifications;
+using CrossCutting.Specification.Interfaces;
 using System;
 
 namespace Aeroportos.Domain.Specifications

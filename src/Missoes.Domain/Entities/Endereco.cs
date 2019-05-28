@@ -14,7 +14,8 @@ namespace Missoes.Domain.Entities
         public int PilotoId { get; private set; }
         public virtual Piloto Piloto { get; private set; }
 
-        public Endereco(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId, int pilotoId)
+        public Endereco(string cep, string logradouro, int numero, string complemento,
+            string bairro, int cidadeId, int pilotoId)
         {
             Cep = cep;
             Logradouro = logradouro;
@@ -25,15 +26,15 @@ namespace Missoes.Domain.Entities
             PilotoId = pilotoId;
         }
 
-        public void Update(string cep, string logradouro, int numero, string complemento, string bairro, int cidadeId)
+        public void Update(string cep, string logradouro, int numero,
+            string complemento, string bairro, int cidadeId)
         {
-            this
-                .UpdateCep(cep)
-                .UpdateLogradouro(logradouro)
-                .UpdateNumero(numero)
-                .UpdateComplemento(complemento)
-                .UpdateBairro(bairro)
-                .UpdateCidade(cidadeId);
+            UpdateCep(cep)
+            .UpdateLogradouro(logradouro)
+            .UpdateNumero(numero)
+            .UpdateComplemento(complemento)
+            .UpdateBairro(bairro)
+            .UpdateCidade(cidadeId);
         }
 
         public Endereco UpdateCep(string cep)

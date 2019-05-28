@@ -1,9 +1,9 @@
-﻿using Aeroportos.Domain.Interfaces.Specifications;
-using System;
+﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
+using CrossCutting.Specification.Interfaces;
 
-namespace Aeroportos.Domain.Specifications
+namespace CrossCutting.Specification
 {
     public sealed class SpecificationBuilder<T> : ISpecification<T>
     {
@@ -22,7 +22,7 @@ namespace Aeroportos.Domain.Specifications
 
         public bool IsSatisfiedBy(T entity)
         {
-            Func<T, bool> predicate = Predicate.Compile();
+            var predicate = Predicate.Compile();
             return predicate(entity);
         }
 
@@ -53,8 +53,8 @@ namespace Aeroportos.Domain.Specifications
         {
             var newSpecification = new SpecificationBuilder<T>()
             {
-                Predicate = this.Predicate,
-                PostProcess = this.PostProcess
+                Predicate = Predicate,
+                PostProcess = PostProcess
             };
 
             if (Sort != null)
@@ -69,8 +69,8 @@ namespace Aeroportos.Domain.Specifications
         {
             var newSpecification = new SpecificationBuilder<T>()
             {
-                Predicate = this.Predicate,
-                PostProcess = this.PostProcess
+                Predicate = Predicate,
+                PostProcess = PostProcess
             };
 
             if (Sort != null)
@@ -85,8 +85,8 @@ namespace Aeroportos.Domain.Specifications
         {
             var newSpecification = new SpecificationBuilder<T>()
             {
-                Predicate = this.Predicate,
-                Sort = this.Sort
+                Predicate = Predicate,
+                Sort = Sort
             };
 
             if (PostProcess != null)
@@ -101,8 +101,8 @@ namespace Aeroportos.Domain.Specifications
         {
             var newSpecification = new SpecificationBuilder<T>()
             {
-                Predicate = this.Predicate,
-                Sort = this.Sort
+                Predicate = Predicate,
+                Sort = Sort
             };
 
             if (PostProcess != null)
@@ -117,9 +117,9 @@ namespace Aeroportos.Domain.Specifications
         {
             var specification = new SpecificationBuilder<T>()
             {
-                Predicate = And(this.Predicate, that.Predicate),
-                Sort = that.Sort ?? this.Sort,
-                PostProcess = that.PostProcess ?? this.PostProcess
+                Predicate = And(Predicate, that.Predicate),
+                Sort = that.Sort ?? Sort,
+                PostProcess = that.PostProcess ?? PostProcess
             };
 
             return specification;
@@ -129,9 +129,9 @@ namespace Aeroportos.Domain.Specifications
         {
             var specification = new SpecificationBuilder<T>()
             {
-                Predicate = And(this.Predicate, right),
-                Sort = this.Sort,
-                PostProcess = this.PostProcess
+                Predicate = And(Predicate, right),
+                Sort = Sort,
+                PostProcess = PostProcess
             };
 
             return specification;
@@ -149,9 +149,9 @@ namespace Aeroportos.Domain.Specifications
         {
             var specification = new SpecificationBuilder<T>()
             {
-                Predicate = Or(this.Predicate, that.Predicate),
-                Sort = that.Sort ?? this.Sort,
-                PostProcess = that.PostProcess ?? this.PostProcess
+                Predicate = Or(Predicate, that.Predicate),
+                Sort = that.Sort ?? Sort,
+                PostProcess = that.PostProcess ?? PostProcess
             };
 
             return specification;
@@ -161,9 +161,9 @@ namespace Aeroportos.Domain.Specifications
         {
             var specification = new SpecificationBuilder<T>()
             {
-                Predicate = Or(this.Predicate, right),
-                Sort = this.Sort,
-                PostProcess = this.PostProcess
+                Predicate = Or(Predicate, right),
+                Sort = Sort,
+                PostProcess = PostProcess
             };
 
             return specification;
@@ -181,9 +181,9 @@ namespace Aeroportos.Domain.Specifications
         {
             var specification = new SpecificationBuilder<T>()
             {
-                Predicate = Not(this.Predicate),
-                Sort = this.Sort,
-                PostProcess = this.PostProcess
+                Predicate = Not(Predicate),
+                Sort = Sort,
+                PostProcess = PostProcess
             };
 
             return specification;
