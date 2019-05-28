@@ -1,6 +1,6 @@
-﻿using Aeroportos.Context.Seeding.Interfaces;
-using Aeroportos.Domain.Entities;
+﻿using Aeroportos.Domain.Entities;
 using Aeroportos.Domain.Enums;
+using Core.Context.Seeding.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aeroportos.Context.Seeding

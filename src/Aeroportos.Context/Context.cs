@@ -1,10 +1,10 @@
 ﻿using Aeroportos.Context.Mappings;
-using Aeroportos.Context.Seeding.Interfaces;
 using Aeroportos.Domain.Entities;
+using Core.Context;
+using Core.Context.Seeding.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
-using Core.Context;
 
 namespace Aeroportos.Context
 {

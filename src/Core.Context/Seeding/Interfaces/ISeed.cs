@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Aeroportos.Context.Seeding.Interfaces
+namespace Core.Context.Seeding.Interfaces
 {
     public interface ISeed
     {
