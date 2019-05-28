@@ -47,11 +47,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Context", "src\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC", "src\CrossCutting.IoC\CrossCutting.IoC.csproj", "{7FB37A55-F765-45F4-B34E-AEB3EC4E97DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroporto.Api", "src\Aeroporto.Api\Aeroporto.Api.csproj", "{8607D900-7771-41F3-8D29-568882F90A37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Api", "src\Aeroportos.Api\Aeroportos.Api.csproj", "{8607D900-7771-41F3-8D29-568882F90A37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Repository", "src\Aeroporto.Repository\Aeroportos.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Repository", "src\Aeroportos.Repository\Aeroportos.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Application", "src\Aeroporto.Application\Aeroportos.Application.csproj", "{744D643B-E6C0-4A39-8D27-427A506750F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Application", "src\Aeroportos.Application\Aeroportos.Application.csproj", "{744D643B-E6C0-4A39-8D27-427A506750F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Presentation", "0-Presentation", "{F8F70536-8702-49C4-A768-564E3A69FB4F}"
 EndProject

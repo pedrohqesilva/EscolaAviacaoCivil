@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Aeroporto.Api.Controllers
+namespace Aeroportos.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

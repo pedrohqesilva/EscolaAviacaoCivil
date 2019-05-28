@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace Aeroporto.Api
+namespace Aeroportos.Api
 {
     public class Startup
     {

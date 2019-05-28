@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Aeroporto.Api
+namespace Aeroportos.Api
 {
     public class Program
     {
