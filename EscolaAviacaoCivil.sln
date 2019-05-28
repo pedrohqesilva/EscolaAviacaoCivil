@@ -7,23 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aeroportos", "Aeroportos", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{F63A2405-B894-46BF-AF1D-6120DEC541D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Domain", "Aeroportos.Domain\Aeroportos.Domain.csproj", "{4E2DE370-273B-42DB-9EB4-7D259136358D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Domain", "src\Aeroportos.Domain\Aeroportos.Domain.csproj", "{4E2DE370-273B-42DB-9EB4-7D259136358D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1034ECD7-595F-478E-A3D2-506D57C0D831}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{A0F7AF2D-662F-4308-B867-A389674449C9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{D63FB38B-3DF9-4248-974A-FEF4B408F828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "src\Core.Domain\Core.Domain.csproj", "{D63FB38B-3DF9-4248-974A-FEF4B408F828}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Avioes", "Avioes", "{8AE76BE3-E862-452E-8D61-B5C0F0D20F4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{1C6F80F2-8424-40B5-BE59-83C29EBC2063}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avioes.Domain", "Avioes.Domain\Avioes.Domain.csproj", "{3B3D1DF5-A787-4184-8337-F0F25AED69E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avioes.Domain", "src\Avioes.Domain\Avioes.Domain.csproj", "{3B3D1DF5-A787-4184-8337-F0F25AED69E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pilotos", "Pilotos", "{EBAAA000-98DE-4F01-BF08-32DA73150A3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilotos.Domain", "Pilotos.Domain\Pilotos.Domain.csproj", "{F92D765E-53ED-4039-89C6-41A12145AA75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilotos.Domain", "src\Pilotos.Domain\Pilotos.Domain.csproj", "{F92D765E-53ED-4039-89C6-41A12145AA75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{AB8F1290-F475-4D47-BD4A-C25FAFDD73D9}"
 EndProject
@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Missoes", "Missoes", "{AE10
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Domain", "3-Domain", "{39ED6F6A-EAE8-46CE-9D97-59E16B779277}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Missoes.Domain", "Missoes.Domain\Missoes.Domain.csproj", "{2A03DDED-0328-43C3-A060-6CB991D049D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Missoes.Domain", "src\Missoes.Domain\Missoes.Domain.csproj", "{2A03DDED-0328-43C3-A060-6CB991D049D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Application", "1-Application", "{9995E7D5-AC03-494B-BD38-89C54865899C}"
 EndProject
@@ -43,15 +43,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCuttin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Context", "2-Context", "{FD2EE50F-FE8D-4FFB-807D-6A2E0D3DAF60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Context", "Aeroportos.Context\Aeroportos.Context.csproj", "{587A31E6-EE87-4669-900E-DC5259ECC714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Context", "src\Aeroportos.Context\Aeroportos.Context.csproj", "{587A31E6-EE87-4669-900E-DC5259ECC714}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC", "CrossCutting.IoC\CrossCutting.IoC.csproj", "{7FB37A55-F765-45F4-B34E-AEB3EC4E97DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC", "src\CrossCutting.IoC\CrossCutting.IoC.csproj", "{7FB37A55-F765-45F4-B34E-AEB3EC4E97DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroporto.Api", "Aeroporto.Api\Aeroporto.Api.csproj", "{8607D900-7771-41F3-8D29-568882F90A37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroporto.Api", "src\Aeroporto.Api\Aeroporto.Api.csproj", "{8607D900-7771-41F3-8D29-568882F90A37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Repository", "Aeroporto.Repository\Aeroportos.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Repository", "src\Aeroporto.Repository\Aeroportos.Repository.csproj", "{E5983108-5B76-4227-ACDC-D70369331AD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Application", "Aeroporto.Application\Aeroportos.Application.csproj", "{744D643B-E6C0-4A39-8D27-427A506750F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aeroportos.Application", "src\Aeroporto.Application\Aeroportos.Application.csproj", "{744D643B-E6C0-4A39-8D27-427A506750F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Presentation", "0-Presentation", "{F8F70536-8702-49C4-A768-564E3A69FB4F}"
 EndProject
