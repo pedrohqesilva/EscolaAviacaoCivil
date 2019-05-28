@@ -25,7 +25,6 @@
             totalPages = TotalItems / PageSize;
 
             TotalPages = (mod > 0) ? ++totalPages : totalPages;
-
         }
     }
 }

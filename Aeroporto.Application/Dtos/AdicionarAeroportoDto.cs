@@ -1,9 +1,4 @@
-﻿using Aeroportos.Application.Dtos.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aeroportos.Application.Dtos
+﻿namespace Aeroportos.Application.Dtos
 {
     public class AdicionarAeroportoDto
     {

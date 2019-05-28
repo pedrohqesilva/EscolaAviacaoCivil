@@ -26,7 +26,7 @@ namespace Aeroportos.Application.Services
         {
             var aeroporto = _mapper.Map<Aeroporto>(aeroportoDto);
             return Task.FromResult(
-                _aeroportoService.AdicionarAsync(aeroporto,cancellationToken)
+                _aeroportoService.AdicionarAsync(aeroporto, cancellationToken)
             );
         }
 
