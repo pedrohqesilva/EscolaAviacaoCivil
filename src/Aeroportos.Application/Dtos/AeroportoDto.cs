@@ -5,8 +5,6 @@ namespace Aeroportos.Application.Dtos
 {
     public class AeroportoDto : BaseEntity
     {
-        public PaginationDto Pagination { get; set; }
-
         public string CodigoIcao { get; private set; }
         public string Nome { get; private set; }
         public string Descricao { get; private set; }

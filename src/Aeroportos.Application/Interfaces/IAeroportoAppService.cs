@@ -16,6 +16,6 @@ namespace Aeroportos.Application.Interfaces
 
         Task<AeroportoDto> ObterPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken);
 
-        Task<IEnumerable<AeroportoDto>> ObterPorTipoAeroporto(int codigoTipoAeroporto, CancellationToken cancellationToken);
+        Task<IEnumerable<AeroportoDto>> ObterPorTipoAeroporto(AeroportoFiltroDto filtroDto, CancellationToken cancellationToken);
     }
 }

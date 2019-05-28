@@ -55,9 +55,9 @@ namespace Aeroportos.Application.Services
             );
         }
 
-        public Task<IEnumerable<AeroportoDto>> ObterPorTipoAeroporto(int codigoTipoAeroporto, CancellationToken cancellationToken)
+        public Task<IEnumerable<AeroportoDto>> ObterPorTipoAeroporto(AeroportoFiltroDto filtroDto, CancellationToken cancellationToken)
         {
-            var aeroportos = _aeroportoService.ObterPorTipoAeroporto(codigoTipoAeroporto, cancellationToken);
+            var aeroportos = _aeroportoService.ObterPorTipoAeroporto(filtroDto.TipoAeroportoId, cancellationToken);
             return Task.FromResult(
                 _mapper.Map<IEnumerable<AeroportoDto>>(aeroportos)
             );
