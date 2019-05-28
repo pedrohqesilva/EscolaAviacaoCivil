@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aeroporto.Application\Aeroportos.Application.csproj" />
+    <ProjectReference Include="..\Aeroporto.Repository\Aeroportos.Repository.csproj" />
     <ProjectReference Include="..\Aeroportos.Context\Aeroportos.Context.csproj" />
   </ItemGroup>
 

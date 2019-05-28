@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aeroporto.Application\Aeroportos.Application.csproj" />
     <ProjectReference Include="..\CrossCutting.IoC\CrossCutting.IoC.csproj" />
   </ItemGroup>
 

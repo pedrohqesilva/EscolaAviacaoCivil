@@ -1,4 +1,6 @@
-﻿using CrossCutting.IoC;
+﻿using System.Globalization;
+using Aeroportos.Application.Mappings;
+using CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,13 +25,18 @@ namespace Aeroporto.Api
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             InjectorContainer.ServicesRegister(services, connectionString);
+            AutoMapperConfiguration.Configure();
 
-            services.AddCors();
-
-            services.AddMvc()
+            services
+                .AddCors()
+                .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver())
                 .AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
+            var cultureInfo = new CultureInfo("pt-BR");
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
             services.AddSwaggerGen(c =>
             {
@@ -48,15 +55,15 @@ namespace Aeroporto.Api
             else
                 app.UseHsts();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                var apiJsonUrl = "../swagger/v1/swagger.json";
-                c.SwaggerEndpoint(apiJsonUrl, "Aeroporto Api V1");
-            });
-
-            app.UseHttpsRedirection();
-            app.UseMvc();
+            app
+                .UseMvc()
+                .UseHttpsRedirection()
+                .UseSwagger()
+                .UseSwaggerUI(c =>
+                {
+                    var apiJsonUrl = "../swagger/v1/swagger.json";
+                    c.SwaggerEndpoint(apiJsonUrl, "Aeroporto Api V1");
+                });
         }
     }
 }

@@ -4,9 +4,9 @@ using Aeroportos.Repository.Base;
 
 namespace Aeroportos.Repository
 {
-    internal class AeroportosRepository : BaseRepository<Aeroporto>, IAeroportoRepository
+    public class AeroportoRepository : BaseRepository<Aeroporto>, IAeroportoRepository
     {
-        public AeroportosRepository(Context.Context context) : base(context)
+        public AeroportoRepository(Context.Context context) : base(context)
         {
         }
     }
