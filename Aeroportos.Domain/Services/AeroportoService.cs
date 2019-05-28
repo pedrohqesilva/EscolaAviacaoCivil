@@ -2,6 +2,7 @@
 using Aeroportos.Domain.Interfaces.Repositories;
 using Aeroportos.Domain.Interfaces.Services;
 using Aeroportos.Domain.Specifications;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -37,6 +38,15 @@ namespace Aeroportos.Domain.Services
         public void Remover(Aeroporto aeroporto)
         {
             _aeroportoRepository.Remove(aeroporto);
+        }
+
+        public Task<Aeroporto> ObterPorGuid(Guid guid, CancellationToken cancellationToken)
+        {
+            var spec = SpecificationBuilder<Aeroporto>.Create()
+                .ComGuid(guid)
+                .NaoExcluido();
+
+            return _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
         }
 
         public Task<Aeroporto> ObterPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken)

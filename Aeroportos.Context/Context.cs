@@ -1,6 +1,8 @@
 ﻿using Aeroportos.Context.Mappings;
+using Aeroportos.Context.Seeding.Interfaces;
 using Aeroportos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace Aeroportos.Context
@@ -53,6 +55,23 @@ namespace Aeroportos.Context
                 .Where(p => p.ClrType == typeof(string)))
             {
                 property.IsUnicode(true);
+            }
+        }
+
+        private void RunSeeds(ModelBuilder modelBuilder)
+        {
+            var typeSeed = typeof(ISeed);
+
+            var types = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => typeSeed.IsAssignableFrom(p)
+                         && !p.IsInterface
+                         && !p.IsAbstract);
+
+            foreach (var type in types)
+            {
+                var instance = (ISeed)Activator.CreateInstance(type);
+                instance.Seed(modelBuilder);
             }
         }
     }

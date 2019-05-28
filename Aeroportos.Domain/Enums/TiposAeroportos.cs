@@ -1,9 +1,9 @@
 ﻿namespace Aeroportos.Domain.Enums
 {
-    public static class TiposAeroportos
+    public enum TiposAeroportos
     {
-        public const string Aeroporto = "AP";
-        public const string Aerodromo = "AD";
-        public const string Heliponto = "HP";
+        Aeroporto = 1,
+        Aerodromo = 2,
+        Heliponto = 3
     }
 }

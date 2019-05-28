@@ -1,4 +1,5 @@
 ﻿using Aeroportos.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Aeroportos.Domain.Interfaces.Services
 
         void Remover(Aeroporto aeroporto);
 
+        Task<Aeroporto> ObterPorGuid(Guid guid, CancellationToken cancellationToken);
         Task<Aeroporto> ObterPorCodigoIcao(string codigoIcao, CancellationToken cancellationToken);
 
         Task<IEnumerable<Aeroporto>> ObterPorTipoAeroporto(int codigoTipoAeroporto, CancellationToken cancellationToken);

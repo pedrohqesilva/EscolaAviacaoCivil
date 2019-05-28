@@ -15,8 +15,9 @@ namespace Aeroportos.Domain.Entities
 
         #region Constructors
 
-        public TipoAeroporto(string sigla, string descricao)
+        public TipoAeroporto(int id, string sigla, string descricao)
         {
+            Id = id;
             Sigla = sigla;
             Descricao = descricao;
         }

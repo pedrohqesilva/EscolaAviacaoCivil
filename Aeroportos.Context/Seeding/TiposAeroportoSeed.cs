@@ -7,14 +7,14 @@ namespace Aeroportos.Context.Seeding
 {
     internal class TiposAeroportoSeed : ISeed
     {
-        public void Configure(ModelBuilder modelBuilder)
+        public void Seed(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Entity<TipoAeroporto>()
                 .HasData(
-                    new TipoAeroporto(TiposAeroportos.Aeroporto, "Aeroporto"),
-                    new TipoAeroporto(TiposAeroportos.Aerodromo, "Aerodromo"),
-                    new TipoAeroporto(TiposAeroportos.Heliponto, "Heliponto")
+                    new TipoAeroporto((int)TiposAeroportos.Aeroporto, "AP", "Aeroporto"),
+                    new TipoAeroporto((int)TiposAeroportos.Aerodromo, "AD", "Aerodromo"),
+                    new TipoAeroporto((int)TiposAeroportos.Heliponto, "HP", "Heliponto")
                 );
         }
     }
