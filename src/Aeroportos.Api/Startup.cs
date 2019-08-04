@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Aeroportos.Application.Mappings;
+﻿using Aeroportos.Application.Mappings;
 using CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Globalization;
 
 namespace Aeroportos.Api
 {

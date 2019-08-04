@@ -1,7 +1,7 @@
-﻿using System;
+﻿using CrossCutting.Specification.Interfaces;
+using System;
 using System.Linq;
 using System.Linq.Expressions;
-using CrossCutting.Specification.Interfaces;
 
 namespace CrossCutting.Specification
 {

@@ -28,10 +28,10 @@ namespace Aeroportos.Domain.Services
         {
             var spec = SpecificationBuilder<Aeroporto>.Create()
                 .ComCodigoIcao(codigoIcao)
-                .NaoExcluido();
+                .Ativo();
 
             var aeroporto = await _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
-            aeroporto.Update(nome, descricao);
+            aeroporto.Alterar(nome, descricao);
 
             _aeroportoRepository.Update(aeroporto);
         }
@@ -45,7 +45,7 @@ namespace Aeroportos.Domain.Services
         {
             var spec = SpecificationBuilder<Aeroporto>.Create()
                 .ComGuid(guid)
-                .NaoExcluido();
+                .Ativo();
 
             return _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Aeroportos.Domain.Services
         {
             var spec = SpecificationBuilder<Aeroporto>.Create()
                 .ComCodigoIcao(codigoIcao)
-                .NaoExcluido();
+                .Ativo();
 
             return _aeroportoRepository.FirstOrDefaultAsync(spec, cancellationToken);
         }
@@ -63,7 +63,7 @@ namespace Aeroportos.Domain.Services
         {
             var spec = SpecificationBuilder<Aeroporto>.Create()
                 .ComCodigoTipoAeroporto(codigoTipoAeroporto)
-                .NaoExcluido();
+                .Ativo();
 
             return _aeroportoRepository.SearchAsync(spec, cancellationToken);
         }

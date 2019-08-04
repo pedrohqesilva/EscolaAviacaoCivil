@@ -20,13 +20,13 @@ namespace Aeroportos.Domain.Specifications
 
         public static ISpecification<Aeroporto> ComCodigoTipoAeroporto(this ISpecification<Aeroporto> spec, int codigo)
         {
-            spec = spec.And(a => a.TipoAeroportoId == codigo);
+            spec = spec.And(a => a.TipoAeroporto.Id == codigo);
             return spec;
         }
 
-        public static ISpecification<Aeroporto> NaoExcluido(this ISpecification<Aeroporto> spec)
+        public static ISpecification<Aeroporto> Ativo(this ISpecification<Aeroporto> spec)
         {
-            spec = spec.And(a => !a.IsExcluido);
+            spec = spec.And(a => !a.Metadata.IsAtivo);
             return spec;
         }
     }

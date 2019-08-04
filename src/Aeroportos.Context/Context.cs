@@ -20,10 +20,6 @@ namespace Aeroportos.Context
 
         public DbSet<Aeroporto> Aeroporto { get; set; }
         public DbSet<TipoAeroporto> TipoAeroporto { get; set; }
-        public DbSet<Endereco> Endereco { get; set; }
-        public DbSet<Cidade> Cidade { get; set; }
-        public DbSet<Estado> Estado { get; set; }
-        public DbSet<Pais> Pais { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,11 +28,7 @@ namespace Aeroportos.Context
             modelBuilder
                 .HasDefaultSchema("dbAeroportos")
                 .ApplyConfiguration(new AeroportoMap())
-                .ApplyConfiguration(new TipoAeroportoMap())
-                .ApplyConfiguration(new EnderecoMap())
-                .ApplyConfiguration(new CidadeMap())
-                .ApplyConfiguration(new EstadoMap())
-                .ApplyConfiguration(new PaisMap());
+                .ApplyConfiguration(new TipoAeroportoMap());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

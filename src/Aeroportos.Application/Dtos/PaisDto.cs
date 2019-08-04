@@ -1,8 +1,6 @@
-﻿using Aeroportos.Application.Dtos.Base;
-
-namespace Aeroportos.Application.Dtos
+﻿namespace Aeroportos.Application.Dtos
 {
-    public class PaisDto : BaseEntityDto
+    public class PaisDto
     {
         public string Sigla { get; set; }
         public string Descricao { get; set; }

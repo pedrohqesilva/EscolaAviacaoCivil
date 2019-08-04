@@ -1,8 +1,7 @@
-﻿using Aeroportos.Application.Dtos.Base;
-
-namespace Aeroportos.Application.Dtos
+﻿namespace Aeroportos.Application.Dtos
 {
-    public class EnderecoDto : BaseEntityDto
+    public class EnderecoDto
+
     {
         public string Cep { get; set; }
         public string Logradouro { get; set; }
@@ -10,5 +9,7 @@ namespace Aeroportos.Application.Dtos
         public string Complemento { get; set; }
         public string Bairro { get; set; }
         public CidadeDto Cidade { get; set; }
+        public EstadoDto Estado { get; set; }
+        public PaisDto Pais { get; set; }
     }
 }

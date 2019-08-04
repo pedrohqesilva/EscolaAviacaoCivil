@@ -25,25 +25,20 @@ namespace Aeroportos.Context.Mappings.Base
                 .IsRequired();
 
             builder
-                .Property(p => p.DataCriacao)
-                .HasColumnName("DATA_CRIACAO")
-                .HasDefaultValueSql("GETDATE()")
-                .IsRequired();
+                .OwnsOne(o => o.Metadata, x =>
+                {
+                    x.Property(p => p.DataCriacao)
+                        .HasColumnName("DATA_CRIACAO")
+                        .IsRequired();
 
-            builder
-                .Property(p => p.DataModificacao)
-                .HasColumnName("DATA_MODIFICACAO")
-                .IsRequired(false);
+                    x.Property(p => p.DataModificacao)
+                        .HasColumnName("DATA_MODIFICACAO")
+                        .IsRequired(false);
 
-            builder
-                .Property(p => p.DataExclusao)
-                .HasColumnName("DATA_EXCLUSAO")
-                .IsRequired(false);
-
-            builder
-                .Property(p => p.IsExcluido)
-                .HasColumnName("EXCLUIDO")
-                .IsRequired();
+                    x.Property(p => p.DataExclusao)
+                        .HasColumnName("DATA_EXCLUSAO")
+                        .IsRequired(false);
+                });
         }
     }
 }
